@@ -261,7 +261,7 @@ def init_evt_info(shell_evt_info):
 
 #directory = '/project/projectdirs/dune/users/2x2EventGeneration/output/NuMI_FHC_CHERRY/EDEPSIM/'
 #directory = '/global/cfs/projectdirs/dune/users/2x2EventGeneration/output/NuMI_FHC_CHERRY/EDEPSIM/'
-directory = '/global/cfs/projectdirs/dune/users/yifanch/2x2EventGeneration_nue/output/NuMI_FHC_CHERRY/EDEPSIM_2/'
+directory = '/global/cfs/projectdirs/dune/users/yifanch/2x2EventGeneration_nue/output/NuMI_RHC_CHERRY/EDEPSIM_5/'
 
 edep_tree = ROOT.TChain("EDepSimEvents")
 groo_tree = ROOT.TChain("DetSimPassThru/gRooTracker")
@@ -273,7 +273,7 @@ for filename in os.listdir(directory):
         edep_tree.Add(fname)
         groo_tree.Add(fname)
 
-output_file = '/global/cfs/projectdirs/dune/users/yifanch/2x2_nue/nue_evt_info_FHC_2.h5'
+output_file = '/global/cfs/projectdirs/dune/users/yifanch/2x2_nue/nuebar_evt_info_RHC_5.h5'
 #output_file = '/project/projectdirs/dune/users/yifanch/2x2_nue/nue_evt_info_FHC.h5'
 with h5py.File(output_file, 'w') as f:
     f.create_dataset('nue_info', (0,), dtype=event_dtype, maxshape=(None,))
